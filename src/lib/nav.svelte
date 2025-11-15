@@ -19,16 +19,16 @@
 			<!-- Desktop Navigation -->
 			<div class="flex items-center space-x-8">
 				<a
-					href="/"
-					class="hover-underline px-3 py-2 text-sm font-medium text-text-1 transition-colors"
-				>
-					Home
-				</a>
-				<a
 					href="/about"
 					class="hover-underline px-3 py-2 text-sm font-medium text-text-1 transition-colors"
 				>
 					About
+				</a>
+				<a
+					href="/blogs"
+					class="hover-underline px-3 py-2 text-sm font-medium text-text-1 transition-colors"
+				>
+					Blogs
 				</a>
 			</div>
 		</div>

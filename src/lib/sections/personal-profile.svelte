@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import me from '$lib/assets/me.jpg';
 
-	let showRealName = $state(false);
 	let isAnimating = $state(true);
 
 	onMount(() => {
@@ -10,31 +9,15 @@
 			isAnimating = false;
 		}, 10);
 	});
-
-	const technologies = [
-		{ name: 'TypeScript', icon: '🔷' },
-		{ name: 'JavaScript', icon: '🟨' },
-		{ name: 'React', icon: '⚛️' },
-		{ name: 'SvelteKit', icon: '🔥' },
-		{ name: 'Rust', icon: '🦀' },
-		{ name: 'C', icon: '©️' },
-		{ name: 'C++', icon: '➕' },
-		{ name: 'C#', icon: '♯' },
-		{ name: 'Java', icon: '☕' },
-		{ name: 'MongoDB', icon: '🍃' },
-		{ name: 'Supabase', icon: '⚡' },
-		{ name: 'AWS', icon: '☁️' },
-		{ name: 'Node.js', icon: '🟢' }
-	];
 </script>
 
 <div class="m-auto min-h-screen max-w-7xl p-8">
 	<div class="overflow-hidden rounded-2xl">
-		<div class="p-8 md:p-12">
-			<div class="flex flex-col gap-8 sm:flex-row md:gap-12">
+		<div class="p-12">
+			<div class="flex flex-col gap-8 sm:flex-row sm:gap-12">
 				<!-- Left Section - Text Content -->
 				<div class="order-2 flex-1 text-center sm:order-1 sm:flex-7 sm:text-left lg:flex-4">
-					<p class="text-text-1">Hello, I am</p>
+					<p class="m-1 text-2xl text-text-1">Hello, I am</p>
 					<!-- Name Section -->
 					<div class="flex">
 						<div class="group relative mb-6 flex-1">
@@ -45,7 +28,7 @@
 									: 'translate-y-0 opacity-100'}"
 							>
 								<div
-									class="inline-block rounded-lg bg-accent-2 px-4 py-2 font-bold text-slate-900 md:text-4xl"
+									class="inline-block rounded-lg bg-accent-2 px-4 py-2 font-bold text-slate-900 sm:text-4xl"
 								>
 									<p class="m-0 text-8xl">David</p>
 								</div>
@@ -56,7 +39,7 @@
 
 					<!-- Info Section -->
 					<div class="inline space-y-3 text-slate-200">
-						<p class="text-lg">Student at the University of Edinburgh</p>
+						<p class="text-lg text-text-2">Student at the University of Edinburgh</p>
 						<p class="text-base text-slate-300">
 							<span class="font-medium text-purple-400">Full stack developer</span> |
 							<span class="font-medium text-pink-400"> Low-level systems passionist</span> |
@@ -67,7 +50,7 @@
 					<!-- Social Links -->
 					<div class="mt-6 flex gap-4">
 						<a
-							href="https://github.com"
+							href="https://github.com/BL-CZY"
 							target="_blank"
 							rel="noopener noreferrer"
 							class="flex items-center gap-2 rounded-lg bg-slate-700 px-4 py-2 text-white transition-colors hover:bg-slate-600"
@@ -80,7 +63,7 @@
 							<span>GitHub</span>
 						</a>
 						<a
-							href="https://linkedin.com"
+							href="www.linkedin.com/in/david-huang-222023329"
 							target="_blank"
 							rel="noopener noreferrer"
 							class="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-500"
@@ -101,7 +84,7 @@
 				>
 					<div class="relative">
 						<div
-							class="absolute inset-0 animate-pulse rounded-full bg-linear-to-r from-accent-1 to-accent-2 opacity-50 blur-xl"
+							class="absolute inset-1 animate-pulse rounded-full bg-linear-to-r from-accent-1 to-accent-2 opacity-50 blur-xl"
 						></div>
 						<div
 							class="relative overflow-hidden rounded-full border-2 border-accent-1 transition-all duration-500 hover:scale-105"
@@ -119,23 +102,7 @@
 					</div>
 				</div>
 			</div>
-			<hr class="my-8 border-purple-500/30" />
-
-			<!-- Technologies -->
-			<div>
-				<h3 class="mb-4 text-xl font-semibold text-purple-300">Tech Stack</h3>
-				<div class="flex flex-wrap gap-3">
-					{#each technologies as tech, index}
-						<div
-							class="flex items-center gap-2 rounded-lg bg-slate-700/50 px-4 py-2 text-slate-200 transition-all hover:scale-105 hover:bg-slate-700"
-							style="animation: fadeIn 0.5s ease-out {index * 0.05}s both"
-						>
-							<span>{tech.icon}</span>
-							<span class="text-sm font-medium">{tech.name}</span>
-						</div>
-					{/each}
-				</div>
-			</div>
+			<hr class="my-8 border-accent-1/30" />
 		</div>
 	</div>
 </div>
