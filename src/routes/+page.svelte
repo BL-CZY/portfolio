@@ -1,10 +1,11 @@
 <script lang="ts">
+	import PersonalProfile from '$lib/sections/personal-profile.svelte';
 	import { SVG, type Svg } from '@svgdotjs/svg.js';
 
 	function add_path(draw: Svg, line1: string, line2: string, delay: number, dur: number) {
 		draw.size('100%', '100%');
 
-		let path = draw.path(line1).fill('none').stroke({ width: 3, color: '#363636' });
+		let path = draw.path(line1).fill('none').stroke({ width: 3, color: '#36363655' });
 
 		let length = path.length();
 
@@ -48,4 +49,19 @@
 	});
 </script>
 
-<div class="fixed top-0 right-0 bottom-0 left-0" id="drawing"></div>
+<div class="fixed top-0 right-0 bottom-0 left-0 z-[-2]" id="drawing"></div>
+<div class="fixed top-0 right-0 bottom-0 left-0 z-[-1] filter"></div>
+
+<PersonalProfile />
+
+<style>
+	.filter {
+		background: radial-gradient(
+			circle at center,
+			transparent 0%,
+			transparent 20%,
+			var(--color-base-1) 80%,
+			var(--color-base-1) 100%
+		);
+	}
+</style>
