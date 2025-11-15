@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { slide } from 'svelte/transition';
 	import Project from './project.svelte';
 
@@ -18,11 +18,16 @@
 
 	<div class="flex flex-col gap-5 pr-10 pb-10 pl-10 md:flex-row">
 		<div
-			class="flex-4 rounded-2xl border-2 border-base-3 bg-base-2 p-6 shadow-2xl backdrop-blur-3xl"
+			class="relative flex-4 overflow-hidden rounded-2xl border-2 border-base-3 bg-base-2 p-6 shadow-2xl backdrop-blur-3xl"
 		>
+			<div
+				class="absolute top-full left-full -z-10 h-full w-full -translate-x-[50%] -translate-y-[50%] rounded-full opacity-70 blur-3xl"
+				style="background: radial-gradient(circle, var(--color-accent-1) 0%, transparent 70%);"
+			></div>
+
 			<div class="h-full w-full">
 				<div
-					class="flex w-full translate-x-0 items-center gap-3 p-2 transition-all duration-300 hover:translate-x-1"
+					class=" flex w-full translate-x-0 items-center gap-3 p-2 transition-all duration-300 hover:translate-x-1"
 				>
 					<h2 class="text-4xl font-bold text-white">Frontend</h2>
 					<div class="flex-col justify-items-end">
@@ -94,15 +99,25 @@
 		</div>
 		<div class="flex flex-3 flex-col gap-5">
 			<div
-				class="flex-7 rounded-2xl border-2 border-base-3 bg-base-2 p-6 shadow-2xl backdrop-blur-3xl"
+				class="relative flex-7 overflow-hidden rounded-2xl border-2 border-base-3 bg-base-2 p-6 shadow-2xl backdrop-blur-3xl"
 			>
+				<div
+					class="absolute top-full left-full -z-10 h-full w-full -translate-x-[50%] -translate-y-[50%] rounded-full opacity-70 blur-3xl"
+					style="background: radial-gradient(circle, var(--color-accent-1) 0%, transparent 70%);"
+				></div>
+
 				<div class="h-full w-full translate-y-0 transition-all duration-300 hover:-translate-y-1">
 					<h2 class="text-4xl font-bold text-white">Team Work</h2>
 				</div>
 			</div>
 			<div
-				class="flex-7 rounded-2xl border-2 border-base-3 bg-base-2 p-6 shadow-2xl backdrop-blur-3xl"
+				class="relative flex-7 overflow-hidden rounded-2xl border-2 border-base-3 bg-base-2 p-6 shadow-2xl backdrop-blur-3xl"
 			>
+				<div
+					class="absolute top-full left-full -z-10 h-full w-full -translate-x-[50%] -translate-y-[50%] rounded-full opacity-70 blur-3xl"
+					style="background: radial-gradient(circle, var(--color-accent-1) 0%, transparent 70%);"
+				></div>
+
 				<div class="h-full w-full translate-y-0 transition-all duration-300 hover:-translate-y-1">
 					<h2 class="text-4xl font-bold text-white">Self-motivated</h2>
 				</div>

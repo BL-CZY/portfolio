@@ -18,6 +18,10 @@
 		aria-expanded={appear}
 	>
 		<div class="pointer-events-none absolute inset-0"></div>
+		<div
+			class="absolute top-full left-full -z-10 h-[200%] w-[200%] -translate-x-[50%] -translate-y-[50%] rounded-full opacity-70 blur-3xl"
+			style="background: radial-gradient(circle, var(--color-accent-3) 0%, transparent 70%);"
+		></div>
 
 		<div class="relative z-10 mb-4 flex items-center justify-between">
 			<h3 class="text-left text-2xl font-bold tracking-tight text-white">{name}</h3>
