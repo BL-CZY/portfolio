@@ -13,7 +13,7 @@
 
 <div class="m-auto max-w-7xl p-8">
 	<div class="overflow-hidden rounded-2xl">
-		<div class="flex flex-col gap-8 sm:flex-row sm:gap-12">
+		<div class="flex flex-col items-center gap-8 sm:flex-row sm:gap-12">
 			<!-- Left Section - Text Content -->
 			<div class="order-2 flex-1 text-center sm:order-1 sm:flex-7 sm:text-left lg:flex-4">
 				<p class="m-1 text-2xl text-text-1">Hello, I am</p>
