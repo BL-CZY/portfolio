@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AppBuilding from '$lib/sections/app-building.svelte';
 	import PersonalProfile from '$lib/sections/personal-profile.svelte';
 	import { SVG, type Svg } from '@svgdotjs/svg.js';
 
@@ -18,7 +19,7 @@
 		path.animate(1000, delay).ease('<>').stroke({ dashoffset: 0 });
 
 		// @ts-ignore
-		path.animate(dur).ease('<>').plot(line2).loop(true, true);
+		// path.animate(dur).ease('<>').plot(line2).loop(true, true);
 
 		return path;
 	}
@@ -53,6 +54,7 @@
 <div class="fixed top-0 right-0 bottom-0 left-0 z-[-1] filter"></div>
 
 <PersonalProfile />
+<AppBuilding />
 
 <style>
 	.filter {
