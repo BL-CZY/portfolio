@@ -8,7 +8,7 @@
 	onMount(() => {
 		setTimeout(() => {
 			isAnimating = false;
-		}, 1000);
+		}, 10);
 	});
 
 	const technologies = [
@@ -28,45 +28,35 @@
 	];
 </script>
 
-<div class="min-h-screen w-full p-8">
+<div class="m-auto min-h-screen max-w-7xl p-8">
 	<div class="overflow-hidden rounded-2xl">
 		<div class="p-8 md:p-12">
-			<div class="flex flex-col gap-8 md:flex-row md:gap-12">
+			<div class="flex flex-col gap-8 sm:flex-row md:gap-12">
 				<!-- Left Section - Text Content -->
-				<div class="flex-1 md:flex-7">
+				<div class="order-2 flex-1 text-center sm:order-1 sm:flex-7 sm:text-left lg:flex-4">
+					<p class="text-text-1">Hello, I am</p>
 					<!-- Name Section -->
-					<div class="group relative mb-6 inline-block">
-						<!-- First Name with Animation (disappears on hover) -->
-						<div
-							class="transition-all duration-500 {isAnimating
-								? 'translate-y-4 opacity-0'
-								: 'translate-y-0 opacity-100'} group-hover:-translate-y-4 group-hover:opacity-0"
-						>
+					<div class="flex">
+						<div class="group relative mb-6 flex-1">
+							<!-- First Name with Animation (disappears on hover) -->
 							<div
-								class="inline-block rounded-lg bg-linear-to-r from-purple-500 to-pink-500 px-4 py-2 text-3xl font-bold text-slate-900 md:text-4xl"
+								class="transition-all duration-500 {isAnimating
+									? 'translate-y-4 opacity-0'
+									: 'translate-y-0 opacity-100'}"
 							>
-								<p class="m-0">Isem</p>
+								<div
+									class="inline-block rounded-lg bg-accent-2 px-4 py-2 font-bold text-slate-900 md:text-4xl"
+								>
+									<p class="m-0 text-8xl">David</p>
+								</div>
 							</div>
-						</div>
-
-						<!-- Real Name - Reveals on hover -->
-						<div
-							class="absolute top-0 left-0 transition-all duration-500 {isAnimating
-								? 'translate-y-4 opacity-0'
-								: 'translate-y-4 opacity-0'} group-hover:translate-y-0 group-hover:opacity-100"
-						>
-							<div
-								class="inline-flex items-center gap-2 rounded-lg bg-slate-700/50 px-4 py-2 text-lg whitespace-nowrap text-purple-300 md:text-xl"
-							>
-								<p class="m-0 text-3xl font-bold md:text-4xl">le péonom réel</p>
-							</div>
+							<p class="m-0 text-8xl text-text-1">Huang</p>
 						</div>
 					</div>
 
 					<!-- Info Section -->
-					<div class="space-y-3 text-slate-200">
-						<p class="text-2xl font-semibold text-purple-300">le nom de famille</p>
-						<p class="text-lg">Student at the University of JENESAISRIEN</p>
+					<div class="inline space-y-3 text-slate-200">
+						<p class="text-lg">Student at the University of Edinburgh</p>
 						<p class="text-base text-slate-300">
 							<span class="font-medium text-purple-400">Full stack developer</span> |
 							<span class="font-medium text-pink-400"> Low-level systems passionist</span> |
@@ -106,13 +96,15 @@
 				</div>
 
 				<!-- Right Section - Profile Image -->
-				<div class="flex flex-1 items-start justify-center md:flex-3 md:justify-end">
+				<div
+					class="order-1 flex flex-1 items-start justify-center sm:order-2 sm:flex-3 sm:justify-end"
+				>
 					<div class="relative">
 						<div
 							class="absolute inset-0 animate-pulse rounded-full bg-linear-to-r from-accent-1 to-accent-2 opacity-50 blur-xl"
 						></div>
 						<div
-							class="relative h-48 w-48 overflow-hidden rounded-full border-2 border-accent-1 shadow-2xl md:h-64 md:w-64"
+							class="relative overflow-hidden rounded-full border-2 border-accent-1 transition-all duration-500 hover:scale-105"
 						>
 							<img
 								src={me}

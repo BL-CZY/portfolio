@@ -59,8 +59,7 @@
 		background: radial-gradient(
 			circle at center,
 			transparent 0%,
-			transparent 20%,
-			var(--color-base-1) 80%,
+			var(--color-base-1) 95%,
 			var(--color-base-1) 100%
 		);
 	}
