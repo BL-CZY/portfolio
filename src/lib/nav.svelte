@@ -3,7 +3,7 @@
 </script>
 
 <nav
-	class="fixed z-10 transition-all duration-100"
+	class="fixed z-10 duration-100"
 	class:floating-blur={isScrolled}
 	class:fixed-noblur={!isScrolled}
 >
@@ -48,6 +48,13 @@
 />
 
 <style>
+	nav {
+		transition:
+			backdrop-filter 0.1s ease,
+			box-shadow 0.1s ease,
+			border-color 0.1s ease;
+	}
+
 	.hover-underline {
 		position: relative;
 	}
@@ -75,7 +82,13 @@
 		top: 1%;
 		border: 1px solid var(--color-accent-2);
 		border-radius: 10px;
-		transition: all 0.3s ease;
+		transition:
+			backdrop-filter 0.3s ease,
+			box-shadow 0.3s ease,
+			left 0.3s ease,
+			right 0.3s ease,
+			top 0.3s ease,
+			border 0.3s ease;
 	}
 
 	.fixed-noblur {
@@ -86,6 +99,12 @@
 		top: 0;
 		border: 0px solid #00000000;
 		border-radius: 10px;
-		transition: all 0.3s ease;
+		transition:
+			backdrop-filter 0.3s ease,
+			box-shadow 0.3s ease,
+			left 0.3s ease,
+			right 0.3s ease,
+			top 0.3s ease,
+			border 0.3s ease;
 	}
 </style>

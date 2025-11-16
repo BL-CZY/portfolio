@@ -4,12 +4,11 @@
 	import PersonalProfile from '$lib/sections/personal-profile.svelte';
 	import { SVG, type Svg } from '@svgdotjs/svg.js';
 
-	function add_path(draw: Svg, line1: string, line2: string, delay: number, dur: number) {
+	function add_path(draw: Svg, line1: string, _line2: string, delay: number, _dur: number) {
 		draw.size('100%', '100%');
 
-		let path = draw.path(line1).fill('none').stroke({ width: 3, color: '#1EDF9555' });
-
-		let length = path.length();
+		const path = draw.path(line1).fill('none').stroke({ width: 3, color: '#1EDF9555' });
+		const length = path.length();
 
 		// @ts-ignore
 		path.stroke({
@@ -18,9 +17,6 @@
 		});
 
 		path.animate(1000, delay).ease('<>').stroke({ dashoffset: 0 });
-
-		// @ts-ignore
-		// path.animate(dur).ease('<>').plot(line2).loop(true, true);
 
 		return path;
 	}
@@ -57,6 +53,10 @@
 <PersonalProfile />
 <AppBuilding />
 <LowLevelSystems />
+
+<div class="pb-10 text-center">
+	<p class="font-mono text-text-1">2025 © David Huang</p>
+</div>
 
 <style>
 	.filter {

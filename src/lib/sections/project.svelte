@@ -8,10 +8,10 @@
 </script>
 
 <div
-	class="mx-auto w-full max-w-[500px] rounded-2xl border-2 border-base-3 bg-base-2 shadow-2xl backdrop-blur-3xl"
+	class="project-card mx-auto w-full max-w-[500px] rounded-2xl border-2 border-base-3 bg-base-2 shadow-2xl backdrop-blur-3xl"
 >
 	<div
-		class="group relative w-full cursor-pointer overflow-hidden rounded-2xl border-none p-6 shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl active:-translate-y-0.5"
+		class="group relative w-full cursor-pointer overflow-hidden rounded-2xl border-none p-6 shadow-md"
 		aria-label={`Toggle description for ${name}`}
 	>
 		<div class="pointer-events-none absolute inset-0"></div>
@@ -47,7 +47,7 @@
 		<div class="relative z-10 flex flex-wrap gap-2">
 			{#each technologies as tech}
 				<span
-					class="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/25 px-3 py-2 text-text-1 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-white/35 hover:text-accent-2"
+					class="tech-tag inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/25 px-3 py-2 text-text-1 backdrop-blur-md"
 					title={tech}
 				>
 					<span class="text-1xl leading-none drop-shadow-md">{tech}</span>
@@ -60,5 +60,39 @@
 <style>
 	p {
 		font-family: var(--font-mono);
+	}
+
+	.project-card {
+		transform: translateY(0px);
+		transition:
+			transform 0.3s ease-out,
+			box-shadow 0.3s ease-out;
+	}
+
+	.project-card:hover,
+	.project-card:focus,
+	.project-card:active {
+		transform: translateY(-4px);
+		box-shadow:
+			0 10px 15px -3px rgba(0, 0, 0, 0.1),
+			0 4px 6px -2px rgba(0, 0, 0, 0.05);
+		transition:
+			transform 0.3s ease-out,
+			box-shadow 0.3s ease-out;
+	}
+
+	.tech-tag {
+		transition:
+			transform 0.2s ease,
+			color 0.2s ease,
+			background-color 0.2s ease;
+	}
+
+	.tech-tag:hover,
+	.tech-tag:focus,
+	.tech-tag:active {
+		transform: scale(1.1);
+		background-color: rgba(255, 255, 255, 0.35);
+		color: var(--color-accent-2);
 	}
 </style>

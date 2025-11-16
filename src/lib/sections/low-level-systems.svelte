@@ -2,7 +2,7 @@
 	import Panel from './panel.svelte';
 </script>
 
-<div class="relative m-auto max-w-7xl p-10">
+<div class="relative m-auto max-w-7xl pt-10 pr-10 pl-10">
 	<div class="pb-10 text-center">
 		<h1 class="text-5xl text-text-1">System & Cybersecurity enthusiast</h1>
 	</div>
@@ -29,6 +29,7 @@
 		link=""
 		logo="HYPED"
 	/>
+	<hr class="my-8 border-accent-1/30" />
 </div>
 
 <style>

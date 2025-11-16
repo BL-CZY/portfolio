@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import me from '$lib/assets/me.jpg';
+	import IntersectionObserver from 'svelte-intersection-observer';
 
 	let isAnimating = $state(true);
 
@@ -9,20 +10,46 @@
 			isAnimating = false;
 		}, 10);
 	});
+
+	let text1: HTMLElement | null = $state(null);
+	let text1_intersecting = $state(false);
+
+	let text2: HTMLElement | null = $state(null);
+	let text2_intersecting = $state(false);
+
+	let text3: HTMLElement | null = $state(null);
+	let text3_intersecting = $state(false);
+
+	let infoSection: HTMLElement | null = $state(null);
+	let infoSection_intersecting = $state(false);
+
+	let socialLinks: HTMLElement | null = $state(null);
+	let socialLinks_intersecting = $state(false);
+
+	let profileImage: HTMLElement | null = $state(null);
+	let profileImage_intersecting = $state(false);
 </script>
 
 <div class="m-auto max-w-7xl p-8">
-	<div class="overflow-hidden rounded-2xl">
+	<div class="rounded-2xl">
 		<div class="flex flex-col items-center gap-8 sm:flex-row sm:gap-12">
 			<!-- Left Section - Text Content -->
 			<div class="order-2 flex-1 text-center sm:order-1 sm:flex-7 sm:text-left lg:flex-4">
-				<h3 class="m-1 font-style text-2xl text-text-1">Hello, I am</h3>
+				<IntersectionObserver once element={text1} bind:intersecting={text1_intersecting} />
+				<h3
+					class="slide-from-left m-1 font-style text-2xl text-text-1 delay-0"
+					class:visible={text1_intersecting}
+					bind:this={text1}
+				>
+					Hello, I am
+				</h3>
+
 				<!-- Name Section -->
 				<div class="flex">
 					<div class="group relative mb-6 flex-1">
 						<!-- First Name with Animation (disappears on hover) -->
 						<div
-							class="transition-all duration-500 {isAnimating
+							class="name-animation-div {isAnimating
 								? 'translate-y-4 opacity-0'
 								: 'translate-y-0 opacity-100'}"
 						>
@@ -32,12 +59,28 @@
 								<p class="m-0 font-mono text-8xl">David</p>
 							</div>
 						</div>
-						<p class="m-0 font-mono text-8xl text-text-1">Huang</p>
+						<IntersectionObserver once element={text2} bind:intersecting={text2_intersecting} />
+						<p
+							class="slide-from-left m-0 font-mono text-8xl text-text-1 delay-150"
+							bind:this={text2}
+							class:visible={text2_intersecting}
+						>
+							Huang
+						</p>
 					</div>
 				</div>
 
 				<!-- Info Section -->
-				<div class="inline space-y-3 text-slate-200">
+				<IntersectionObserver
+					once
+					element={infoSection}
+					bind:intersecting={infoSection_intersecting}
+				/>
+				<div
+					class="slide-from-left space-y-3 text-slate-200 delay-300"
+					bind:this={infoSection}
+					class:visible={infoSection_intersecting}
+				>
 					<p class="font-mono text-lg text-text-2">Student at the University of Edinburgh</p>
 					<p class="text-base text-slate-300">
 						<span class="font-mono font-medium text-purple-400">Full stack developer</span
@@ -50,7 +93,16 @@
 				</div>
 
 				<!-- Social Links -->
-				<div class="mt-6 flex gap-4">
+				<IntersectionObserver
+					once
+					element={socialLinks}
+					bind:intersecting={socialLinks_intersecting}
+				/>
+				<div
+					class="slide-from-left mt-6 flex gap-4 delay-450"
+					bind:this={socialLinks}
+					class:visible={socialLinks_intersecting}
+				>
 					<a
 						href="https://github.com/BL-CZY"
 						target="_blank"
@@ -65,7 +117,7 @@
 						<span>GitHub</span>
 					</a>
 					<a
-						href="www.linkedin.com/in/david-huang-222023329"
+						href="https://www.linkedin.com/in/david-huang-222023329"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-500"
@@ -84,12 +136,21 @@
 			<div
 				class="order-1 flex flex-1 items-start justify-center p-12 sm:order-2 sm:flex-3 sm:justify-end"
 			>
-				<div class="relative">
+				<IntersectionObserver
+					once
+					element={profileImage}
+					bind:intersecting={profileImage_intersecting}
+				/>
+				<div
+					class="slide-from-right relative delay-0"
+					bind:this={profileImage}
+					class:visible={profileImage_intersecting}
+				>
 					<div
 						class="absolute inset-1 animate-pulse rounded-full bg-linear-to-r from-accent-1 to-accent-2 opacity-50 blur-xl"
 					></div>
 					<div
-						class="relative overflow-hidden rounded-full border-2 border-accent-1 transition-all duration-500 hover:scale-105"
+						class="relative overflow-hidden rounded-full border-2 border-accent-1 transition-transform duration-500 hover:scale-105"
 					>
 						<img
 							src={me}
@@ -122,5 +183,52 @@
 
 	p {
 		font-family: var(--font-mono);
+	}
+
+	.name-animation-div {
+		transition:
+			opacity 0.5s ease,
+			transform 0.5s ease;
+	}
+
+	/* Slide from left animations */
+	.slide-from-left {
+		opacity: 0;
+		transform: translateX(-50px);
+		transition:
+			opacity 0.6s ease,
+			transform 0.6s ease;
+	}
+
+	/* Slide from right animations */
+	.slide-from-right {
+		opacity: 0;
+		transform: translateX(50px);
+		transition:
+			opacity 0.6s ease,
+			transform 0.6s ease;
+	}
+
+	/* Visible state for all animations */
+	.visible {
+		opacity: 1 !important;
+		transform: translateX(0px) !important;
+	}
+
+	/* Delay classes */
+	.delay-0 {
+		transition-delay: 0ms;
+	}
+
+	.delay-150 {
+		transition-delay: 150ms;
+	}
+
+	.delay-300 {
+		transition-delay: 300ms;
+	}
+
+	.delay-450 {
+		transition-delay: 450ms;
 	}
 </style>
