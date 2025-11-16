@@ -35,7 +35,7 @@
 							onclick={() => {
 								show_frontend_details = !show_frontend_details;
 							}}
-							class="text-1xl rounded-2xl border-2 border-base-3 p-1 text-base-3 transition-all duration-200 hover:border-accent-1"
+							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl transition-all duration-200 hover:border-accent-1"
 							>{show_frontend_details ? 'See less' : 'See more'}</button
 						>
 					</div>
@@ -58,7 +58,7 @@
 							onclick={() => {
 								show_backend_details = !show_backend_details;
 							}}
-							class="text-1xl rounded-2xl border-2 border-base-3 p-1 text-base-3 transition-all duration-200 hover:border-accent-1"
+							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl transition-all duration-200 hover:border-accent-1"
 							>{show_backend_details ? 'See less' : 'See more'}</button
 						>
 					</div>
@@ -76,13 +76,13 @@
 				<div
 					class="flex w-full translate-x-0 items-center gap-3 p-2 transition-all duration-300 hover:translate-x-1"
 				>
-					<h2 class="text-4xl font-bold text-white">Deployment</h2>
+					<h2 class="text-4xl font-bold text-white">Deploy</h2>
 					<div class="flex-col justify-items-end">
 						<button
 							onclick={() => {
 								show_deployment_details = !show_deployment_details;
 							}}
-							class="text-1xl rounded-2xl border-2 border-base-3 p-1 text-base-3 transition-all duration-200 hover:border-accent-1"
+							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl transition-all duration-200 hover:border-accent-1"
 							>{show_deployment_details ? 'See less' : 'See more'}</button
 						>
 					</div>
@@ -106,12 +106,12 @@
 					style="background: radial-gradient(circle, var(--color-accent-1) 0%, transparent 70%);"
 				></div>
 
-				<div class="h-full w-full translate-y-0 transition-all duration-300 hover:-translate-y-1">
-					<h2 class="text-4xl font-bold text-white">Team Work</h2>
+				<div class="w-full translate-y-0 transition-all duration-300 hover:-translate-y-1">
+					<h2 class="p-5 text-4xl font-bold text-white">Fluent in English and Mandarin</h2>
 				</div>
 			</div>
 			<div
-				class="relative flex-7 overflow-hidden rounded-2xl border-2 border-base-3 bg-base-2 p-6 shadow-2xl backdrop-blur-3xl"
+				class="relative flex-10 overflow-hidden rounded-2xl border-2 border-base-3 bg-base-2 p-6 shadow-2xl backdrop-blur-3xl"
 			>
 				<div
 					class="absolute top-full left-full -z-10 h-full w-full -translate-x-[50%] -translate-y-[50%] rounded-full opacity-70 blur-3xl"
@@ -120,6 +120,13 @@
 
 				<div class="h-full w-full translate-y-0 transition-all duration-300 hover:-translate-y-1">
 					<h2 class="text-4xl font-bold text-white">Self-motivated</h2>
+
+					<div class="pt-2 pl-5">
+						<p class="text-2xl font-semibold text-text-1">
+							I have learned multiple programming languages and frameworks on my own through online
+							resources and documentation.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
