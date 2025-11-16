@@ -16,7 +16,7 @@
 		<div class="flex flex-col items-center gap-8 sm:flex-row sm:gap-12">
 			<!-- Left Section - Text Content -->
 			<div class="order-2 flex-1 text-center sm:order-1 sm:flex-7 sm:text-left lg:flex-4">
-				<p class="m-1 font-style text-2xl text-text-1">Hello, I am</p>
+				<h3 class="m-1 font-style text-2xl text-text-1">Hello, I am</h3>
 				<!-- Name Section -->
 				<div class="flex">
 					<div class="group relative mb-6 flex-1">

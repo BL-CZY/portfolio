@@ -20,13 +20,13 @@
 			<div class="flex items-center space-x-8">
 				<a
 					href="/about"
-					class="hover-underline px-3 py-2 text-sm font-medium text-text-1 transition-colors"
+					class="hover-underline font-monno px-3 py-2 text-sm font-medium text-text-1 transition-colors"
 				>
 					About
 				</a>
 				<a
 					href="/blogs"
-					class="hover-underline px-3 py-2 text-sm font-medium text-text-1 transition-colors"
+					class="hover-underline px-3 py-2 font-mono text-sm font-medium text-text-1 transition-colors"
 				>
 					Blogs
 				</a>
