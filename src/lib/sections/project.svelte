@@ -5,8 +5,6 @@
 		description,
 		link
 	}: { name: string; technologies: string[]; description: string; link: string } = $props();
-
-	let appear = $state(false);
 </script>
 
 <div
@@ -15,7 +13,6 @@
 	<div
 		class="group relative w-full cursor-pointer overflow-hidden rounded-2xl border-none p-6 shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl active:-translate-y-0.5"
 		aria-label={`Toggle description for ${name}`}
-		aria-expanded={appear}
 	>
 		<div class="pointer-events-none absolute inset-0"></div>
 		<div
@@ -26,9 +23,7 @@
 		<div class="relative z-10 mb-4 flex items-center justify-between">
 			<h3 class="text-left text-2xl font-bold tracking-tight text-white">{name}</h3>
 			<svg
-				class="shrink-0 text-white/90 transition-transform duration-300 {appear
-					? 'rotate-180'
-					: ''}"
+				class="shrink-0 text-white/90 transition-transform duration-300"
 				width="20"
 				height="20"
 				viewBox="0 0 20 20"

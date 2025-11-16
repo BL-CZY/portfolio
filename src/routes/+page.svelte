@@ -1,5 +1,6 @@
 <script lang="ts">
 	import AppBuilding from '$lib/sections/app-building.svelte';
+	import LowLevelSystems from '$lib/sections/low-level-systems.svelte';
 	import PersonalProfile from '$lib/sections/personal-profile.svelte';
 	import { SVG, type Svg } from '@svgdotjs/svg.js';
 
@@ -55,6 +56,7 @@
 
 <PersonalProfile />
 <AppBuilding />
+<LowLevelSystems />
 
 <style>
 	.filter {
