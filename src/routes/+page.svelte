@@ -7,7 +7,7 @@
 	function add_path(draw: Svg, line1: string, line2: string, delay: number, dur: number) {
 		draw.size('100%', '100%');
 
-		let path = draw.path(line1).fill('none').stroke({ width: 3, color: '#36363655' });
+		let path = draw.path(line1).fill('none').stroke({ width: 3, color: '#1EDF9555' });
 
 		let length = path.length();
 

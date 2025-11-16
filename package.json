@@ -28,6 +28,7 @@
 		"vite": "^7.1.10"
 	},
 	"dependencies": {
-		"@svgdotjs/svg.js": "^3.2.5"
+		"@svgdotjs/svg.js": "^3.2.5",
+		"svelte-intersection-observer": "^1.0.0"
 	}
 }
