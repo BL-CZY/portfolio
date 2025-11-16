@@ -52,7 +52,7 @@
 		<div class="relative z-10 flex flex-wrap gap-2">
 			{#each technologies as tech}
 				<span
-					class="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/25 px-3 py-2 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-white/35 hover:text-accent-2"
+					class="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/25 px-3 py-2 text-text-1 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-white/35 hover:text-accent-2"
 					title={tech}
 				>
 					<span class="text-1xl leading-none drop-shadow-md">{tech}</span>
@@ -61,3 +61,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	p {
+		font-family: var(--font-mono);
+	}
+</style>

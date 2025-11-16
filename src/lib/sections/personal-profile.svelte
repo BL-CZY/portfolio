@@ -16,7 +16,7 @@
 		<div class="flex flex-col items-center gap-8 sm:flex-row sm:gap-12">
 			<!-- Left Section - Text Content -->
 			<div class="order-2 flex-1 text-center sm:order-1 sm:flex-7 sm:text-left lg:flex-4">
-				<p class="m-1 text-2xl text-text-1">Hello, I am</p>
+				<p class="m-1 font-style text-2xl text-text-1">Hello, I am</p>
 				<!-- Name Section -->
 				<div class="flex">
 					<div class="group relative mb-6 flex-1">
@@ -29,20 +29,23 @@
 							<div
 								class="inline-block rounded-lg bg-accent-2 px-4 py-2 font-bold text-slate-900 sm:text-4xl"
 							>
-								<p class="m-0 text-8xl">David</p>
+								<p class="m-0 font-mono text-8xl">David</p>
 							</div>
 						</div>
-						<p class="m-0 text-8xl text-text-1">Huang</p>
+						<p class="m-0 font-mono text-8xl text-text-1">Huang</p>
 					</div>
 				</div>
 
 				<!-- Info Section -->
 				<div class="inline space-y-3 text-slate-200">
-					<p class="text-lg text-text-2">Student at the University of Edinburgh</p>
+					<p class="font-mono text-lg text-text-2">Student at the University of Edinburgh</p>
 					<p class="text-base text-slate-300">
-						<span class="font-medium text-purple-400">Full stack developer</span> |
-						<span class="font-medium text-pink-400"> Low-level systems passionist</span> |
-						<span class="font-medium text-blue-400"> Cyber Security enthusiast</span>
+						<span class="font-mono font-medium text-purple-400">Full stack developer</span
+						>&nbsp|&nbsp
+						<span class="font-mono font-medium text-pink-400">
+							Low-level systems passionist</span
+						>&nbsp|&nbsp
+						<span class="font-mono font-medium text-blue-400"> Cyber Security enthusiast</span>
 					</p>
 				</div>
 
@@ -115,5 +118,9 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
+	}
+
+	p {
+		font-family: var(--font-mono);
 	}
 </style>

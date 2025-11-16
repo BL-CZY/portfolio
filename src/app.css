@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Momo+Signature&family=Stack+Sans+Notch:wght@200..700&display=swap');
 
 @theme {
     --color-accent-1: #1EDF95;
@@ -9,4 +10,6 @@
     --color-base-3: #4a4a4a;
     --color-text-1: #DCD5CC;
     --color-text-2: #f0e8df;
+    --font-style: "Momo Signature", cursive;
+    --font-display: "Fira Mono", monospace;
 }

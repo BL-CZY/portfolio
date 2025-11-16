@@ -42,7 +42,7 @@
 				</div>
 				{#if show_frontend_details}
 					<div transition:slide class="pl-5">
-						<p class="text-2xl font-semibold text-text-1">
+						<p class="text-xl text-text-1">
 							I am profficient in Sveltekit and familiar with React and Next.js, as well as tailwind
 							and vanilla html, css, and javascript.
 						</p>
@@ -65,7 +65,7 @@
 				</div>
 				{#if show_backend_details}
 					<div transition:slide class="pl-5">
-						<p class="text-2xl font-semibold text-text-1">
+						<p class="text-xl text-text-1">
 							I am familiar with various backend technologies for database and authentication,
 							system programming for high performance applications, and cybersecurity principles to
 							ensure secure application development.
@@ -89,7 +89,7 @@
 				</div>
 				{#if show_deployment_details}
 					<div transition:slide class="pl-5">
-						<p class="text-2xl font-semibold text-text-1">
+						<p class="text-xl text-text-1">
 							With my extensive experience with linux, I have deployed multiple applications with
 							AWS EC2 and hosted domain names with AWS Route 53.
 						</p>
@@ -122,7 +122,7 @@
 					<h2 class="text-4xl font-bold text-white">Self-motivated</h2>
 
 					<div class="pt-2 pl-5">
-						<p class="text-2xl font-semibold text-text-1">
+						<p class="text-xl text-text-1">
 							I have learned multiple programming languages and frameworks on my own through online
 							resources and documentation.
 						</p>
@@ -156,4 +156,13 @@
 			link={'https://github.com/BL-CZY/portfolio'}
 		/>
 	</div>
+	<hr class="my-8 border-accent-1/30" />
 </div>
+
+<style>
+	p,
+	h1,
+	h2 {
+		font-family: var(--font-mono);
+	}
+</style>

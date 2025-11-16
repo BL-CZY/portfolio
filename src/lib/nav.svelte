@@ -12,7 +12,7 @@
 			<!-- Logo/Brand -->
 			<div class="flex items-center">
 				<a href="/" class="flex shrink-0 items-center">
-					<span class="text-2xl font-bold text-accent-1">D. H.</span>
+					<span class="font-style text-2xl font-bold text-accent-1">D. H.</span>
 				</a>
 			</div>
 
