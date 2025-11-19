@@ -54,21 +54,6 @@
 		</div>
 		<div class="relative z-10 mb-4 flex items-center justify-between">
 			<h3 class="text-left text-2xl font-bold tracking-tight text-white">{name}</h3>
-			<svg
-				class="shrink-0 text-white/90 transition-transform duration-300"
-				width="20"
-				height="20"
-				viewBox="0 0 20 20"
-				fill="none"
-			>
-				<path
-					d="M5 7.5L10 12.5L15 7.5"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				/>
-			</svg>
 		</div>
 		<p class="text-text-1">{descriptions}</p>
 		<a class="text-accent-1" href={link}>Learn more</a>

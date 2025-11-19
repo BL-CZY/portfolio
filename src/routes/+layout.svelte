@@ -31,7 +31,9 @@
 
 		// Animation loop for floating movement
 		const animate = () => {
-			circles = circles.map((circle) => {
+			// Direct mutations without triggering reactivity on every frame
+			for (let i = 0; i < circles.length; i++) {
+				const circle = circles[i];
 				if (circle.progress < 1) {
 					// Rising phase with ease-out
 					circle.progress += 0.015;
@@ -44,9 +46,9 @@
 					// Always update float offset for smooth transition
 					circle.floatOffset += circle.inc;
 				}
-
-				return circle;
-			});
+			}
+			// Trigger reactivity once per frame instead of on every mutation
+			circles = circles;
 			requestAnimationFrame(animate);
 		};
 		animate();

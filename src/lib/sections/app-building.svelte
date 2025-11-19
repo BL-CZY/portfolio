@@ -76,7 +76,8 @@
 							onclick={() => {
 								show_frontend_details = !show_frontend_details;
 							}}
-							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl transition-colors duration-200 hover:border-accent-1"
+							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl duration-200 hover:border-accent-1"
+							style="transition: border-color 200ms"
 							>{show_frontend_details ? 'See less' : 'See more'}</button
 						>
 					</div>
@@ -91,7 +92,8 @@
 				{/if}
 
 				<div
-					class="flex w-full translate-x-0 items-center gap-3 p-2 transition-transform duration-300 hover:translate-x-1"
+					class="flex w-full translate-x-0 items-center gap-3 p-2 duration-300 hover:translate-x-1"
+					style="transition: transform 300ms"
 				>
 					<h2 class="text-4xl font-bold text-accent-1">Backend</h2>
 					<div class="flex-col justify-items-end">
@@ -99,7 +101,8 @@
 							onclick={() => {
 								show_backend_details = !show_backend_details;
 							}}
-							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl transition-colors duration-200 hover:border-accent-1"
+							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl duration-200 hover:border-accent-1"
+							style="transition: border-color 200ms"
 							>{show_backend_details ? 'See less' : 'See more'}</button
 						>
 					</div>
@@ -115,7 +118,8 @@
 				{/if}
 
 				<div
-					class="flex w-full translate-x-0 items-center gap-3 p-2 transition-transform duration-300 hover:translate-x-1"
+					class="flex w-full translate-x-0 items-center gap-3 p-2 duration-300 hover:translate-x-1"
+					style="transition: transform 300ms"
 				>
 					<h2 class="text-4xl font-bold text-white">Deploy</h2>
 					<div class="flex-col justify-items-end">
@@ -123,7 +127,8 @@
 							onclick={() => {
 								show_deployment_details = !show_deployment_details;
 							}}
-							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl transition-colors duration-200 hover:border-accent-1"
+							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl duration-200 hover:border-accent-1"
+							style="transition: border-color 200ms"
 							>{show_deployment_details ? 'See less' : 'See more'}</button
 						>
 					</div>
