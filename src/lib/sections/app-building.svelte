@@ -254,10 +254,13 @@
 </div>
 
 <style>
-	p,
+	p {
+		font-family: var(--font-mono);
+	}
+
 	h1,
 	h2 {
-		font-family: var(--font-mono);
+		font-family: var(--font-main);
 	}
 
 	/* Slide from left animations */

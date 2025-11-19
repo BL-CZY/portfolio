@@ -8,7 +8,9 @@
 }`;
 </script>
 
-<div>
+# a
+
+<div class="blog-post util-content-auto util-contain-intrinsic">
 	<h1>How does Rust async - behind the magic</h1>
 
 	<h2>Prefix</h2>
@@ -36,31 +38,37 @@
 		In Rust, an async function will return a Future. A Future in Rust is essentially a trait like
 		so(taken from Rust core):
 	</p>
-	<code>{snippet1}</code>
+	<pre class="code-block"><code>{snippet1}</code></pre>
 	<p>
 		As a result, any struct that implements this trait is able to be used with the ".await" syntax
 	</p>
 	<h3>What is this??</h3>
 	<p>The poll function seems a bit intimidating, so let's break down everything in it.</p>
 	<p>
-		The poll function requires that <span>Self</span> must be a mutable reference wrapped in a
-		<span>Pin</span>, which, according to the
+		The poll function requires that <span class="inline-code">Self</span> must be a mutable
+		reference wrapped in a
+		<span class="inline-code">Pin</span>, which, according to the
 		<a href="https://doc.rust-lang.org/core/pin/index.html">Rust documentation</a>, is:
-		<i
-			>"We say that a value has been pinned when it has been put into a state where it is guaranteed
+		<i>
+			"We say that a value has been pinned when it has been put into a state where it is guaranteed
 			to remain located at the same place in memory from the time it is pinned until its <span
-				>drop</span
-			> is called."</i
-		>
-		Here, the <span>drop</span> function refers to the destructor of the struct, which can happen
-		when the program goes out of scope or when <span>drop</span> is called on the struct. You can
-		find more information about this concept in RAII (Resource Acquisition Is Initialization)
+				class="inline-code">drop</span
+			> is called."
+		</i>
+		Here, the <span class="inline-code">drop</span> function refers to the destructor of the struct,
+		which can happen when the program goes out of scope or when
+		<span class="inline-code">drop</span>
+		is called on the struct. You can find more information about this concept in RAII (Resource
+		Acquisition Is Initialization)
 		<a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">here</a>. The
-		poll function also takes in a <span>Context</span>, which we will cover later.
+		poll function also takes in a <span class="inline-code">Context</span>, which we will cover
+		later.
 	</p>
 	<p>
-		The <span>poll</span> function will return the specified <span>Output</span> in a
-		<span>Poll</span> enum, which contains two variants:
+		The <span class="inline-code">poll</span> function will return the specified
+		<span class="inline-code">Output</span>
+		in a
+		<span class="inline-code">Poll</span> enum, which contains two variants:
 	</p>
 	<li>
 		<ul>
@@ -77,12 +85,14 @@
 	</li>
 	<h3>Now we talk about Context and Waker</h3>
 	<p>
-		The <span>poll</span> function also takes in a <span>Context</span>, which contains a field of
-		type <span>Waker</span>. A <span>Waker</span> has two functions <span>wake(self)</span> and
-		<span>wake_by_ref(&self)</span>. As a result, the <span>poll</span> function can pass this waker
-		to other places that may complete the future, and then the future is completed, it can call waker.wake()
-		to notify the executor. The implementation of a waker is up to the executor, so this allows significant
-		volatility for the executor.
+		The <span class="inline-code">poll</span> function also takes in a
+		<span class="inline-code">Context</span>, which contains a field of type
+		<span class="inline-code">Waker</span>. A <span class="inline-code">Waker</span> has two
+		functions <span class="inline-code">wake(self)</span> and
+		<span class="inline-code">wake_by_ref(&self)</span>. As a result, the
+		<span class="inline-code">poll</span> function can pass this waker to other places that may complete
+		the future, and then the future is completed, it can call waker.wake() to notify the executor. The
+		implementation of a waker is up to the executor, so this allows significant volatility for the executor.
 	</p>
 	<h2>The executor</h2>
 </div>
