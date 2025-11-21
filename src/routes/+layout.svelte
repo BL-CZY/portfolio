@@ -97,6 +97,13 @@
 
 	<Nav />
 	{@render children()}
+
+	<div class="m-auto max-w-7xl p-8">
+		<hr class=" border-accent-1/30 pb-10" />
+	</div>
+	<div class="pb-10 text-center">
+		<p class="font-mono text-text-1">2025 © David Huang</p>
+	</div>
 </div>
 
 <style>

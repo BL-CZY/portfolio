@@ -29,11 +29,10 @@
 		link=""
 		logo="HYPED"
 	/>
-	<hr class="my-8 border-accent-1/30" />
 </div>
 
 <style>
 	h1 {
-		font-family: var(--font-mono);
+		font-family: var(--font-main);
 	}
 </style>

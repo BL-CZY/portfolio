@@ -54,10 +54,6 @@
 <AppBuilding />
 <LowLevelSystems />
 
-<div class="pb-10 text-center">
-	<p class="font-mono text-text-1">2025 © David Huang</p>
-</div>
-
 <style>
 	.filter {
 		background: radial-gradient(

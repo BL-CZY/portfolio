@@ -53,7 +53,7 @@
 			</h1>
 		</div>
 		<div class="relative z-10 mb-4 flex items-center justify-between">
-			<h3 class="text-left text-2xl font-bold tracking-tight text-white">{name}</h3>
+			<h3 class="text-left font-main text-2xl font-bold tracking-tight text-white">{name}</h3>
 		</div>
 		<p class="text-text-1">{descriptions}</p>
 		<a class="text-accent-1" href={link}>Learn more</a>

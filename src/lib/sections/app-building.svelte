@@ -35,7 +35,7 @@
 	let project3_intersecting = $state(false);
 </script>
 
-<div class="m-auto max-w-7xl">
+<div class="m-auto max-w-7xl pr-8 pl-8">
 	<IntersectionObserver once element={title} bind:intersecting={title_intersecting} />
 	<div
 		class="slide-from-top pb-10 text-center delay-0"
@@ -92,8 +92,9 @@
 				{/if}
 
 				<div
-					class="flex w-full translate-x-0 items-center gap-3 p-2 duration-300 hover:translate-x-1"
-					style="transition: transform 300ms"
+					class="
+                    flex w-full translate-x-0 items-center gap-3 p-2 transition-transform duration-300 hover:translate-x-1
+                    "
 				>
 					<h2 class="text-4xl font-bold text-accent-1">Backend</h2>
 					<div class="flex-col justify-items-end">
@@ -118,8 +119,8 @@
 				{/if}
 
 				<div
-					class="flex w-full translate-x-0 items-center gap-3 p-2 duration-300 hover:translate-x-1"
-					style="transition: transform 300ms"
+					class=" 
+                    flex w-full translate-x-0 items-center gap-3 p-2 transition-transform duration-300 hover:translate-x-1"
 				>
 					<h2 class="text-4xl font-bold text-white">Deploy</h2>
 					<div class="flex-col justify-items-end">
