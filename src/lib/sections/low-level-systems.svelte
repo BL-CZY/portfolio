@@ -8,9 +8,15 @@
 	</div>
 	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3"></div>
 	<Panel
-		name="Foo"
-		technologies={['Bar', 'Bar', 'Bar']}
-		descriptions={['a', 'a', 'a', 'a', 'a']}
+		name="HYPED Project Lead"
+		technologies={['Rust', 'Async', 'Embedded']}
+		descriptions={[
+			'Participated in Hyperloop Edinburgh society',
+			'Project lead in the sensors team',
+			'Working on embedded systems for high-speed pod',
+			'Using Rust for safety and performance',
+			'Implemented a logging system for real-time data monitoring'
+		]}
 		link=""
 		logo="HYPED"
 	/>
@@ -19,7 +25,7 @@
 		technologies={['Bar', 'Bar', 'Bar']}
 		descriptions={['a', 'a', 'a', 'a', 'a']}
 		link=""
-		logo="HYPED"
+		logo="OSSSSS"
 		right
 	/>
 	<Panel

@@ -55,7 +55,6 @@
 		<div class="relative z-10 mb-4 flex items-center justify-between">
 			<h3 class="text-left font-main text-2xl font-bold tracking-tight text-white">{name}</h3>
 		</div>
-		<p class="text-text-1">{descriptions}</p>
 		<a class="text-accent-1" href={link}>Learn more</a>
 		<div class="aspect-square w-[50%]"></div>
 		<div class="relative z-10 flex flex-wrap gap-2">
@@ -89,7 +88,7 @@
 				<div
 					class="underline-before relative rounded-2xl bg-base-2 p-6 transition-opacity duration-300 ease-out"
 				>
-					<p class="text-xl text-text-1">{description}</p>
+					<p class=" text-text-1">{description}</p>
 				</div>
 			</div>
 		{/each}

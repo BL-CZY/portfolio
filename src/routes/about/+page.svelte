@@ -90,8 +90,6 @@
 			</div>
 		{/each}
 	</div>
-
-	<hr class="my-8 border-accent-1/30" />
 </div>
 
 <style>

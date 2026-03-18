@@ -3,7 +3,21 @@
 	import Project from './project.svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
 
-	let show_frontend_details = $state(true);
+	import aws from '$lib/assets/icons/aws.svg';
+	import cpp from '$lib/assets/icons/c++.png';
+	import c from '$lib/assets/icons/c.png';
+	import css from '$lib/assets/icons/css.svg';
+	import docker from '$lib/assets/icons/docker.svg';
+	import html from '$lib/assets/icons/html.svg';
+	import js from '$lib/assets/icons/js.svg';
+	import mongodb from '$lib/assets/icons/mongodb.svg';
+	import react from '$lib/assets/icons/react.svg';
+	import rust from '$lib/assets/icons/rust.png';
+	import supabase from '$lib/assets/icons/supabase-logo-icon.png';
+	import svelte from '$lib/assets/icons/svelte.svg';
+	import ts from '$lib/assets/icons/ts.svg';
+
+	let show_frontend_details = $state(false);
 	let show_backend_details = $state(false);
 	let show_deployment_details = $state(false);
 
@@ -71,6 +85,16 @@
 					class=" flex w-full translate-x-0 items-center gap-3 p-2 transition-transform duration-300 hover:translate-x-1"
 				>
 					<h2 class="text-4xl font-bold text-white">Frontend</h2>
+					<div class="flex gap-2"></div>
+
+					<div class="flex gap-2">
+						<img src={js} alt="js" class="w-5" />
+						<img src={css} alt="css" class="w-5" />
+						<img src={html} alt="html" class="w-5" />
+						<img src={react} alt="react" class="w-5" />
+						<img src={svelte} alt="svelte" class="w-5" />
+					</div>
+
 					<div class="flex-col justify-items-end">
 						<button
 							onclick={() => {
@@ -85,8 +109,8 @@
 				{#if show_frontend_details}
 					<div transition:slide class="pl-5">
 						<p class="text-text-1">
-							I am profficient in Sveltekit and familiar with React and Next.js, as well as tailwind
-							and vanilla html, css, and javascript.
+							I am <b>profficient</b> in <b>Sveltekit, React and Next.js</b>, as well as
+							<b>tailwind</b> and <b>vanilla html, css, and javascript</b>.
 						</p>
 					</div>
 				{/if}
@@ -97,6 +121,16 @@
                     "
 				>
 					<h2 class="text-4xl font-bold text-accent-1">Backend</h2>
+
+					<div class="flex gap-2">
+						<img src={ts} alt="ts" class="w-5" />
+						<img src={cpp} alt="cpp" class="w-5" />
+						<img src={rust} alt="rust" class="w-5" />
+						<img src={c} alt="c" class="w-5" />
+						<img src={mongodb} alt="mongodb" class="w-5" />
+						<img src={supabase} alt="supabase" class="w-5" />
+					</div>
+
 					<div class="flex-col justify-items-end">
 						<button
 							onclick={() => {
@@ -111,9 +145,9 @@
 				{#if show_backend_details}
 					<div transition:slide class="pl-5">
 						<p class=" text-text-1">
-							I am familiar with various backend technologies for database and authentication,
-							system programming for high performance applications, and cybersecurity principles to
-							ensure secure application development.
+							I am familiar with <b>various</b> backend technologies for <b>database and authentication</b>,
+							<b>system programming</b> for high <b>performance</b> applications, and <b>cybersecurity</b> principles to ensure
+							<b>secure</b> application development.
 						</p>
 					</div>
 				{/if}
@@ -123,6 +157,12 @@
                     flex w-full translate-x-0 items-center gap-3 p-2 transition-transform duration-300 hover:translate-x-1"
 				>
 					<h2 class="text-4xl font-bold text-white">Deploy</h2>
+
+					<div class="flex gap-2">
+						<img src={docker} alt="docker" class="w-5" />
+						<img src={aws} alt="aws" class="w-5" />
+					</div>
+
 					<div class="flex-col justify-items-end">
 						<button
 							onclick={() => {
@@ -137,8 +177,8 @@
 				{#if show_deployment_details}
 					<div transition:slide class="pl-5">
 						<p class=" text-text-1">
-							With my extensive experience with linux, I have deployed multiple applications with
-							AWS EC2 and hosted domain names with AWS Route 53.
+							With my extensive experience with <b>linux</b>, I have deployed multiple applications with
+							<b>AWS EC2</b> and hosted domain names with <b>AWS Route 53</b>. I am also familiar with <b>Docker</b> by making CTF challenges
 						</p>
 					</div>
 				{/if}
@@ -218,7 +258,7 @@
 			<Project
 				name="Portfolio Website"
 				description="A personal portfolio website to showcase my projects and skills."
-				technologies={['Svelte', 'Tailwind CSS', 'Vite']}
+				technologies={['Svelte', 'Tailwind CSS', 'Github Pages', 'Github Actions']}
 				link={'https://github.com/BL-CZY/portfolio'}
 			/>
 		</div>
@@ -230,10 +270,10 @@
 			class:visible={project2_intersecting}
 		>
 			<Project
-				name="Portfolio Website"
-				description="A personal portfolio website to showcase my projects and skills."
-				technologies={['Svelte', 'Tailwind CSS', 'Vite']}
-				link={'https://github.com/BL-CZY/portfolio'}
+				name="CloudSIG Website"
+				description="The landing website for CloudSIG, the special interest group under COMPSOC Edinburgh about hosting"
+				technologies={['Svelte', 'Tailwind CSS', 'Github Pages', 'Github Actions']}
+				link={'https://cloudsig.uk/'}
 			/>
 		</div>
 
@@ -244,9 +284,9 @@
 			class:visible={project3_intersecting}
 		>
 			<Project
-				name="Portfolio Website"
-				description="A personal portfolio website to showcase my projects and skills."
-				technologies={['Svelte', 'Tailwind CSS', 'Vite']}
+				name="Maltese dictionary"
+				description="A website for Maltese designed with distributed systems in mind with a contributor portal with authentication"
+				technologies={['Sveltekit', 'Rust', 'Supabase', 'AWS EC2', 'Route 53']}
 				link={'https://github.com/BL-CZY/portfolio'}
 			/>
 		</div>
