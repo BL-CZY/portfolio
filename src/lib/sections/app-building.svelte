@@ -47,6 +47,15 @@
 
 	let project3: HTMLElement | null = $state(null);
 	let project3_intersecting = $state(false);
+
+	let project4: HTMLElement | null = $state(null);
+	let project4_intersecting = $state(false);
+
+	let project5: HTMLElement | null = $state(null);
+	let project5_intersecting = $state(false);
+
+	let project6: HTMLElement | null = $state(null);
+	let project6_intersecting = $state(false);
 </script>
 
 <div class="m-auto max-w-7xl pr-8 pl-8">
@@ -145,8 +154,11 @@
 				{#if show_backend_details}
 					<div transition:slide class="pl-5">
 						<p class=" text-text-1">
-							I am familiar with <b>various</b> backend technologies for <b>database and authentication</b>,
-							<b>system programming</b> for high <b>performance</b> applications, and <b>cybersecurity</b> principles to ensure
+							I am familiar with <b>various</b> backend technologies for
+							<b>database and authentication</b>,
+							<b>system programming</b> for high <b>performance</b> applications, and
+							<b>cybersecurity</b>
+							principles to ensure
 							<b>secure</b> application development.
 						</p>
 					</div>
@@ -177,8 +189,10 @@
 				{#if show_deployment_details}
 					<div transition:slide class="pl-5">
 						<p class=" text-text-1">
-							With my extensive experience with <b>linux</b>, I have deployed multiple applications with
-							<b>AWS EC2</b> and hosted domain names with <b>AWS Route 53</b>. I am also familiar with <b>Docker</b> by making CTF challenges
+							With my extensive experience with <b>linux</b>, I have deployed multiple applications
+							with
+							<b>AWS EC2</b> and hosted domain names with <b>AWS Route 53</b>. I am also familiar
+							with <b>Docker</b> by making CTF challenges
 						</p>
 					</div>
 				{/if}
@@ -257,10 +271,15 @@
 		>
 			<Project
 				name="Portfolio Website"
-				description="A personal portfolio website to showcase my projects and skills."
 				technologies={['Svelte', 'Tailwind CSS', 'Github Pages', 'Github Actions']}
 				link={'https://github.com/BL-CZY/portfolio'}
-			/>
+			>
+				{#snippet description()}
+					<p class="text-text-1">
+						A personal portfolio website to showcase my projects and skills.
+					</p>
+				{/snippet}
+			</Project>
 		</div>
 
 		<IntersectionObserver once element={project2} bind:intersecting={project2_intersecting} />
@@ -271,10 +290,16 @@
 		>
 			<Project
 				name="CloudSIG Website"
-				description="The landing website for CloudSIG, the special interest group under COMPSOC Edinburgh about hosting"
 				technologies={['Svelte', 'Tailwind CSS', 'Github Pages', 'Github Actions']}
 				link={'https://cloudsig.uk/'}
-			/>
+			>
+				{#snippet description()}
+					<p class="text-text-1">
+						The landing website for CloudSIG, the special interest group under COMPSOC Edinburgh
+						about hosting
+					</p>
+				{/snippet}
+			</Project>
 		</div>
 
 		<IntersectionObserver once element={project3} bind:intersecting={project3_intersecting} />
@@ -285,11 +310,82 @@
 		>
 			<Project
 				name="Maltese dictionary"
-				description="A website for Maltese designed with distributed systems in mind with a contributor portal with authentication"
 				technologies={['Sveltekit', 'Rust', 'Supabase', 'AWS EC2', 'Route 53']}
 				link={'https://github.com/BL-CZY/portfolio'}
-			/>
+			>
+				{#snippet description()}
+					<p class="text-text-1">
+						A website for Maltese designed with distributed systems in mind with a contributor
+						portal with authentication
+					</p>
+				{/snippet}
+			</Project>
 		</div>
+
+		<IntersectionObserver once element={project4} bind:intersecting={project4_intersecting} />
+		<div
+			class="slide-from-bottom delay-[450]"
+			bind:this={project4}
+			class:visible={project4_intersecting}
+		>
+			<Project
+				name="Sign language recognition"
+				technologies={['Python', 'PyTorch', 'OpenCV', 'MediaPipe', 'Next.js', 'websocket']}
+				link={'https://drive.google.com/file/d/1gRPko9I84HdrEjnJEWRa4aE8K3W-MLOu/view?usp=sharing'}
+			>
+				{#snippet description()}
+					<p class="text-text-1">
+						A project for the <a
+							href="https://accessaithon2026.netlify.app/"
+							target="_blank"
+							rel="noopener noreferrer">AccessAIthon 2026</a
+						>
+						that won the <b>third place</b> involding a <b>CTC Transformer</b> model that identifies
+						<b>sign languages</b> from video clips
+					</p>
+				{/snippet}
+			</Project>
+		</div>
+
+		<IntersectionObserver once element={project5} bind:intersecting={project5_intersecting} />
+		<div
+			class="slide-from-bottom delay-[600]"
+			bind:this={project5}
+			class:visible={project5_intersecting}
+		>
+			<Project
+				name="Maltese dictionary"
+				technologies={['Sveltekit', 'Rust', 'Supabase', 'AWS EC2', 'Route 53']}
+				link={'https://github.com/BL-CZY/portfolio'}
+			>
+				{#snippet description()}
+					<p class="text-text-1">
+						A website for Maltese designed with distributed systems in mind with a contributor
+						portal with authentication
+					</p>
+				{/snippet}
+			</Project>
+		</div>
+
+		<!-- <IntersectionObserver once element={project6} bind:intersecting={project6_intersecting} />
+		<div
+			class="slide-from-bottom delay-[750]"
+			bind:this={project6}
+			class:visible={project6_intersecting}
+		>
+			<Project
+				name="Maltese dictionary"
+				technologies={['Sveltekit', 'Rust', 'Supabase', 'AWS EC2', 'Route 53']}
+				link={'https://github.com/BL-CZY/portfolio'}
+			>
+				{#snippet description()}
+					<p class="text-text-1">
+						A website for Maltese designed with distributed systems in mind with a contributor
+						portal with authentication
+					</p>
+				{/snippet}
+			</Project>
+		</div> -->
 	</div>
 	<hr class="my-8 border-accent-1/30" />
 </div>

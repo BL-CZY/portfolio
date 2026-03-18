@@ -1,10 +1,12 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	const {
 		name,
 		technologies,
 		description,
 		link
-	}: { name: string; technologies: string[]; description: string; link: string } = $props();
+	}: { name: string; technologies: string[]; description: Snippet; link: string } = $props();
 </script>
 
 <div
@@ -24,7 +26,7 @@
 			<h3 class="text-left text-2xl font-bold tracking-tight text-white">{name}</h3>
 		</div>
 
-		<p class="text-text-1">{description}</p>
+		{@render description()}
 		<a class="text-accent-1" href={link}>Learn more</a>
 
 		<div class="aspect-square w-[50%]"></div>
