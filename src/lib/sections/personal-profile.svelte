@@ -86,7 +86,7 @@
 						<span class="font-mono font-medium text-purple-400">Full stack developer</span
 						>&nbsp|&nbsp
 						<span class="font-mono font-medium text-pink-400">
-							Low-level systems passionist</span
+							Low-level systems engineer</span
 						>&nbsp|&nbsp
 						<span class="font-mono font-medium text-blue-400"> Cyber Security enthusiast</span>
 					</p>
