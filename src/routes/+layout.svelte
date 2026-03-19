@@ -102,7 +102,7 @@
 		<hr class=" border-accent-1/30 pb-10" />
 	</div>
 	<div class="pb-10 text-center">
-		<p class="font-mono text-text-1">2025 © David Huang</p>
+		<p class="font-mono text-text-1">2026 © David Huang</p>
 	</div>
 </div>
 

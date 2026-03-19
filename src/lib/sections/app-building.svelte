@@ -168,7 +168,7 @@
 					class=" 
                     flex w-full translate-x-0 items-center gap-3 p-2 transition-transform duration-300 hover:translate-x-1"
 				>
-					<h2 class="text-4xl font-bold text-white">Deploy</h2>
+					<h2 class="text-4xl font-bold text-white">Deployment</h2>
 
 					<div class="flex gap-2">
 						<img src={docker} alt="docker" class="w-5" />
