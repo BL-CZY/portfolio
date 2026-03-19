@@ -11,7 +11,7 @@
 <div class="blog-post util-content-auto util-contain-intrinsic">
 	<h1>How does Rust async - behind the magic</h1>
 
-	<h2>Prefix</h2>
+	<h2>Preface</h2>
 	<p>
 		Sometimes when we are programming, we tend to perform some actions that require "waiting", such
 		as waiting for an HTTP response.
