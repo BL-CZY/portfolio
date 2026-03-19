@@ -109,7 +109,7 @@
 							onclick={() => {
 								show_frontend_details = !show_frontend_details;
 							}}
-							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl duration-200 hover:border-accent-1"
+							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-text-1 backdrop-blur-3xl duration-200 hover:border-accent-1"
 							style="transition: border-color 200ms"
 							>{show_frontend_details ? 'See less' : 'See more'}</button
 						>
@@ -145,7 +145,7 @@
 							onclick={() => {
 								show_backend_details = !show_backend_details;
 							}}
-							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl duration-200 hover:border-accent-1"
+							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-text-1 backdrop-blur-3xl duration-200 hover:border-accent-1"
 							style="transition: border-color 200ms"
 							>{show_backend_details ? 'See less' : 'See more'}</button
 						>
@@ -180,7 +180,7 @@
 							onclick={() => {
 								show_deployment_details = !show_deployment_details;
 							}}
-							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-base-3 backdrop-blur-3xl duration-200 hover:border-accent-1"
+							class="text-1xl rounded-2xl border-2 border-base-3 bg-base-1 p-1 text-text-1 backdrop-blur-3xl duration-200 hover:border-accent-1"
 							style="transition: border-color 200ms"
 							>{show_deployment_details ? 'See less' : 'See more'}</button
 						>
@@ -347,7 +347,7 @@
 			</Project>
 		</div>
 
-		<IntersectionObserver once element={project5} bind:intersecting={project5_intersecting} />
+		<!-- <IntersectionObserver once element={project5} bind:intersecting={project5_intersecting} />
 		<div
 			class="slide-from-bottom delay-[600]"
 			bind:this={project5}
@@ -365,7 +365,7 @@
 					</p>
 				{/snippet}
 			</Project>
-		</div>
+		</div> -->
 
 		<!-- <IntersectionObserver once element={project6} bind:intersecting={project6_intersecting} />
 		<div

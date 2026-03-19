@@ -8,8 +8,6 @@
 }`;
 </script>
 
-# a
-
 <div class="blog-post util-content-auto util-contain-intrinsic">
 	<h1>How does Rust async - behind the magic</h1>
 
@@ -58,8 +56,8 @@
 		Here, the <span class="inline-code">drop</span> function refers to the destructor of the struct,
 		which can happen when the program goes out of scope or when
 		<span class="inline-code">drop</span>
-		is called on the struct. You can find more information about this concept in RAII (Resource
-		Acquisition Is Initialization)
+		is called on the struct. You can find more information about this concept in RAII (Resource Acquisition
+		Is Initialization)
 		<a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">here</a>. The
 		poll function also takes in a <span class="inline-code">Context</span>, which we will cover
 		later.
@@ -90,9 +88,56 @@
 		<span class="inline-code">Waker</span>. A <span class="inline-code">Waker</span> has two
 		functions <span class="inline-code">wake(self)</span> and
 		<span class="inline-code">wake_by_ref(&self)</span>. As a result, the
-		<span class="inline-code">poll</span> function can pass this waker to other places that may complete
-		the future, and then the future is completed, it can call waker.wake() to notify the executor. The
-		implementation of a waker is up to the executor, so this allows significant volatility for the executor.
+		<span class="inline-code">poll</span> function can pass this waker to other places that may
+		complete the future, and then the future is completed, it can call
+		<span class="inline-code">waker.wake()</span> to notify the executor. The implementation of a waker
+		is up to the executor, so this allows significant volatility for the executor.
 	</p>
+
 	<h2>The executor</h2>
+	<p>
+		The simplest executor is a single-threaded event loop that polls futures in a loop. It will
+		generally contain a queue of tasks, which contain futures to poll. After it calls <span
+			class="inline-code">poll</span
+		>, it will check the result and continue polling until all futures are complete. Take an example
+		in a bare-metal environment where we depend on interrupts to read data from a sensor. We then
+		create a <span class="inline-code">Future</span> that will be completed when the interrupt is
+		triggered. The executor will poll this future, and when the interrupt is triggered, it will call
+		<span class="inline-code">waker.wake()</span> to notify the executor that the future is complete,
+		which is normally done by putting the task back to the executor's task queue, and then the executor
+		can continue to poll other futures.
+	</p>
+
+	<p>
+		Of course, there are more complex executors that can run on multiple threads and use
+		work-stealing to balance the load across threads. However, the core concept of polling futures
+		and using wakers to notify the executor remains the same. There are several design choices that
+		can be made. For example, some executors may prefer keeping a task in the same thread for the
+		sake of less context switching and better cpu cache performance.
+	</p>
+
+	<h2>What are async functions?</h2>
+	<p>
+		Now that we can create <span class="inline-code">structs</span> that have
+		<span class="inline-code">impl Future</span>, we would like to use them in actual async
+		functions. However, a function packs more data than a simple future, such as the function's
+		stack frame. As a result, <span class="inline-code">async fn</span> is essentially a syntax
+		sugar for a function that returns an <span class="inline-code">impl Future</span>. The compiler
+		will transform the function body into a state machine, where each state corresponds to a point
+		in the function where it can yield control (such as an .await point). The state machine will
+		implement the <span class="inline-code">Future</span> trait, and the
+		<span class="inline-code">poll</span> function will execute the state machine until it reaches a
+		yield point or completes.
+	</p>
+
+	<h2>Conclusion</h2>
+	<p>
+		With this system, one can basically construct any types of async operations with executors
+		tailored to their needs. It is also worth noting that the entire system of wakers and futures
+		does not require a heap allocator, and each individual thread does not require an actual thread
+		that has its own stack. This allows a near-zero cost async system that can be used in all
+		environments, from embedded systems to high-performance servers. I am still learning about async
+		Rust while developing an async runtime for my custom operating system kernel, so if you have any
+		suggestions or corrections, please let me know!
+	</p>
 </div>

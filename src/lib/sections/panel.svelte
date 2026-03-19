@@ -56,7 +56,7 @@
 			<h3 class="text-left font-main text-2xl font-bold tracking-tight text-white">{name}</h3>
 		</div>
 		<a class="text-accent-1" href={link}>Learn more</a>
-		<div class="aspect-square w-[50%]"></div>
+		<div class="aspect-square w-[75%]"></div>
 		<div class="relative z-10 flex flex-wrap gap-2">
 			{#each technologies as tech}
 				<span
