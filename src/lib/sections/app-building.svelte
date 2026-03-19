@@ -263,9 +263,34 @@
 	</div>
 
 	<div class="grid grid-cols-1 gap-10 pr-10 pl-10 sm:grid-cols-2 lg:grid-cols-3">
-		<IntersectionObserver once element={project1} bind:intersecting={project1_intersecting} />
+		<IntersectionObserver once element={project4} bind:intersecting={project4_intersecting} />
 		<div
 			class="slide-from-bottom delay-0"
+			bind:this={project4}
+			class:visible={project4_intersecting}
+		>
+			<Project
+				name="Sign language recognition"
+				technologies={['Python', 'PyTorch', 'OpenCV', 'MediaPipe', 'Next.js', 'websocket']}
+				link={'https://drive.google.com/file/d/1gRPko9I84HdrEjnJEWRa4aE8K3W-MLOu/view?usp=sharing'}
+			>
+				{#snippet description()}
+					<p class="text-text-1">
+						A project for the <a
+							href="https://accessaithon2026.netlify.app/"
+							target="_blank"
+							rel="noopener noreferrer">AccessAIthon 2026</a
+						>
+						that won the <b>third place</b> involding a <b>CTC Transformer</b> model that identifies
+						<b>sign languages</b> from video clips
+					</p>
+				{/snippet}
+			</Project>
+		</div>
+
+		<IntersectionObserver once element={project1} bind:intersecting={project1_intersecting} />
+		<div
+			class="slide-from-bottom delay-150"
 			bind:this={project1}
 			class:visible={project1_intersecting}
 		>
@@ -284,7 +309,7 @@
 
 		<IntersectionObserver once element={project2} bind:intersecting={project2_intersecting} />
 		<div
-			class="slide-from-bottom delay-150"
+			class="slide-from-bottom delay-300"
 			bind:this={project2}
 			class:visible={project2_intersecting}
 		>
@@ -304,7 +329,7 @@
 
 		<IntersectionObserver once element={project3} bind:intersecting={project3_intersecting} />
 		<div
-			class="slide-from-bottom delay-300"
+			class="slide-from-bottom delay-450"
 			bind:this={project3}
 			class:visible={project3_intersecting}
 		>
@@ -317,31 +342,6 @@
 					<p class="text-text-1">
 						A website for Maltese designed with distributed systems in mind with a contributor
 						portal with authentication
-					</p>
-				{/snippet}
-			</Project>
-		</div>
-
-		<IntersectionObserver once element={project4} bind:intersecting={project4_intersecting} />
-		<div
-			class="slide-from-bottom delay-[450]"
-			bind:this={project4}
-			class:visible={project4_intersecting}
-		>
-			<Project
-				name="Sign language recognition"
-				technologies={['Python', 'PyTorch', 'OpenCV', 'MediaPipe', 'Next.js', 'websocket']}
-				link={'https://drive.google.com/file/d/1gRPko9I84HdrEjnJEWRa4aE8K3W-MLOu/view?usp=sharing'}
-			>
-				{#snippet description()}
-					<p class="text-text-1">
-						A project for the <a
-							href="https://accessaithon2026.netlify.app/"
-							target="_blank"
-							rel="noopener noreferrer">AccessAIthon 2026</a
-						>
-						that won the <b>third place</b> involding a <b>CTC Transformer</b> model that identifies
-						<b>sign languages</b> from video clips
 					</p>
 				{/snippet}
 			</Project>
